@@ -1,0 +1,10 @@
+<root>
+  <word name="abandon" belongs="NULL" timelabel="0.1">
+    <phonetic>?'b? nd?n</phonetic>
+    <explain timelabel="1.2">v.放弃，抛弃</explain>
+    <mnemonic timelabel="5.3">a(=away,离开)+band(=bind,束缚)+on(后缀)→离开，使之没有束缚关系→离弃</mnemonic>
+    <sentence_english timelabel="23.8">He was (abandoned) by his parents in childhood.</sentence_english>
+    <sentence_chinese timelabel="28.2">他在童年时代被父母抛弃了。</sentence_chinese>
+    <mp3>abandon</mp3>
+  </word>
+</root>

@@ -1,0 +1,18 @@
+html,
+body
+{
+	padding: 0.8em;
+	margin: 0;
+	height: 100%;
+}
+body
+{
+	background-color: #5BC5FF;
+	-webkit-text-size-adjust: none;
+	font-family: Arial, Helvetica, Verdana;
+	font-size: 16px;
+	line-height: 22px;
+	color: #000;
+	position: relative;
+}
+
