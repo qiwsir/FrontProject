@@ -1,4 +1,42 @@
-var xml_data = {};
+xml_data = {};
+$(document).ready(function(){
+	var audio = $("#abandon_mp3").get(0);    //autoplay mp3
+	audio.play();
+ 
+	var xml_file = "source/abandon.xml";
+    
+	var word_image = "source/abandon.png";	
+	$("#picture").html( "<img src=" + word_image + ">");
+	
+	$.get(xml_file, function(xml){	    //read the word and the other information from xml file.
+		$(xml).find("word").each(function(){
+			var word = $(this);
+			xml_data.explain = word.find("explain").text();
+			xml_data.explain_time = word.find("explain").attr("timelabel");
+			xml_data.mnemonic = word.find("mnemonic").text();
+			xml_data.mnemonic_time = word.find("mnemonic").attr("timelabel");
+			xml_data.sentence_english = word.find("sentence_english").text();
+			xml_data.sentence_english_time = word.find("sentence_english").attr("timelabel");
+			xml_data.sentence_chinese = word.find("sentence_chinese").text();
+			xml_data.sentence_chinese_time = word.find("sentence_chinese").attr("timelabel");
+			var mp3 = word.find("mp3").text();
+			
+			$("#english").html("<p>" + mp3 + "</p>");    //display the word in the page.
+			
+			var splited_sent = splitWord(xml_data["mnemonic"]);    //split the string of mnemonic
+			var arr1 = splited_sent['english1'];
+			var arr2 = splited_sent['english2'];
+			var table = "<div class='table-responsive'><table class='table'>";    //display the analysize of the word
+			for(var i=0; i<arr1.length; i++){
+				table +="<tr><td class='success'>" + arr1[i] + "</td><td class='info' style='text-align:left'>(" + arr2[i] + "</td></tr>" 
+			} 
+			
+			$("#analyze").html( table + "</table></div><div><p>===>" + splited_sent["chinese_sent"] + "</p></div>");
+	
+		});
+	});
+
+})
 
 function playaudio(){
 	var word_file = "source/abandon.xml";
@@ -6,61 +44,36 @@ function playaudio(){
 	readXml(word_file);
 	
 	//document.getElementById("english").innerHTML = "<p>" + xml_data["mp3"] + "</p>";
-	document.getElementById("picture").innerHTML = "<img src=" + word_image + ">";
+	$("#picture").html( "<img src=" + word_image + ">");
 }
 
 function updateTrackTime(track){
-	var current_time = (Math.round(track.currentTime*10)/10).toString();
-	document.getElementById("time").innerHTML = current_time + "======" + track.currentTime;
-	//var word_file = "source/abandon.xml";
-	//var word_image = "source/abandon.png";
+	var current_time = Math.round(track.currentTime*10)/10;
 	
-	//readXml(word_file);
-	
-	//document.getElementById("english").innerHTML = "<p>" + xml_data["mp3"] + "</p>";
-	//document.getElementById("picture").innerHTML = "<img src=" + word_image + ">";
-	//$("#englishword").css("background-image", "url("+background_image+") ");
-	
-	
-	if (current_time >= xml_data.explain_time){
-		document.getElementById("word").innerHTML = "<p>" + xml_data["explain"] + "</p>";
+	if (current_time >= (xml_data.explain_time+0)){
+		$("#word").html("<p>" + xml_data["explain"] + "</p>");
 	} else {
-		document.getElementById("word").innerHTML = "";
+		$("#word").html("");
 	}
 	
 	var splited_sent = splitWord(xml_data["mnemonic"]);
 	
-	if (current_time >= xml_data.mnemonic_time){
-		var eng1_arr = splited_sent['english1'];
-		var eng2_arr = splited_sent['english2'];
-		
-		var table = "<div class='table-responsive'><table class='table'><tr class='success'><td>";
-		
-		for(var i=0; i<eng1_arr.length; i++){
-			if (i<eng1_arr.length-1){
-				table += eng1_arr[i] + "</td><td>";
-			} else {
-				table += eng1_arr[i] + "</td></tr><tr class='warning'><td>";
-			}
-		}
-		for(var i=0; i<eng2_arr.length; i++){
-			if (i<eng2_arr.length-1){
-				table += eng2_arr[i] + "</td><td>";
-			} else {
-				table += eng2_arr[i] + "</td></tr></table></div>"
-			}
-		}
-		document.getElementById("analyze").innerHTML = table + "<div><p>===>" + splited_sent["chinese_sent"] + "</p></div>";
+	if (current_time >= (xml_data.mnemonic_time+0)){
+		$("#analyze").css("display","block");
 	} else {
-		document.getElementById("analyze").innerHTML = "";
+		$("#analyze").css("display","none");
 	}
 	
-	if (current_time > xml_data.sentence_english_time){
-		document.getElementById("enexample").innerHTML ="<div><p>" + xml_data.sentence_english + "</p></div>";
+	if (current_time > (xml_data.sentence_english_time+0)){
+		$("#enexample").html("<div><p>" + xml_data.sentence_english + "</p></div>");
+	} else {
+		$("#enexample").html( "");
 	}
 	
-	if (current_time == xml_data.sentence_chinese_time){
-		document.getElementById("cnexample").innerHTML = "<div><p>" + xml_data.sentence_chinese + "</p></div>"; 
+	if (current_time >= (xml_data.sentence_chinese_time+0)){
+		$("#cnexample").html("<div><p>" + xml_data.sentence_chinese + "</p></div>"); 
+	} else {
+		$("#cnexample").html("");
 	}
 }
 
@@ -80,7 +93,7 @@ function readXml(xml_file){
 			xml_data.sentence_chinese_time = word.find("sentence_chinese").attr("timelabel");
 			xml_data.mp3 = word.find("mp3").text();
 			
-			document.getElementById("english").innerHTML = "<p>" + xml_data["mp3"] + "</p>";
+			$("#english").html("<p>" + xml_data["mp3"] + "</p>");
 		});
 	});
 }

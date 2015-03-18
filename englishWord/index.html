@@ -5,39 +5,31 @@
 		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<title>english world</title>
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet" />
 		
-		<script type="text/javascript" src="js/jquery-1.10.2.min.js" ></script>
-		<script type="text/javascript" src="js/script.js"></script>
 	</head>
 	
 	<body>
-		<div class="container-fluid">
-			<div class="row">
-				<audio controls id="abandon_mp3" ontimeupdate='updateTrackTime(this)' onClick="playaudio()">
-					<source src="source/abandon.mp3">
-				</audio>
-			</div>
-		</div>
 		<div class="container-fluid" id="content">
-			<div class="row">
-				<div class="col-md-6">
-					<div id="english"></div>
-				</div>
-				<div class="col-md-6">
-					<div id="picture"></div>
-				</div>
-			</div>
-			<div class="row" id="word"></div>
-			<div class="row" id="analyze"></div>
-			<div class="row" id="enexample"></div>
-			<div class="row" id="cnexample"></div>
+			<div class="row divcenter divblock english_word" id="english"></div>
+			<div class="row divcenter divblock" id="word"></div>
+			<div class="row divcenter divblock hideorshow" id="analyze"></div>
+			<div id="picture" class="row divcenter divblock"></div>
+			<div class="row divcenter divblock" id="enexample"></div>
+			<div class="row divcenter divblock" id="cnexample"></div>
+			<div class="row divcenter divblock"><img src="css/images/onplay.png"></div>
 		</div>
-		
-		
-		<div id="englishword" style="color:blue">
-			<div id="time">currenttime</div>
+		<div class="playaudio divcenter">
+			<!--div class="row divcenter divblock"-->
+			<!--div class = "playaudio divcenter divblock"-->
+			<audio controls id="abandon_mp3" ontimeupdate='updateTrackTime(this)'">
+				<source src="source/abandon.mp3" type="audio/mpeg">
+			</audio>
+			<!--/div-->
 		</div>
 	</body>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet" />
+		
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js" ></script>
+	<script type="text/javascript" src="js/script.js"></script>
 </html>

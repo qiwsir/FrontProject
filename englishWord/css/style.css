@@ -5,9 +5,10 @@ body
 	margin: 0;
 	height: 100%;
 }
+
 body
 {
-	background-color: #5BC5FF;
+	background-color: #fff;
 	-webkit-text-size-adjust: none;
 	font-family: Arial, Helvetica, Verdana;
 	font-size: 16px;
@@ -16,3 +17,38 @@ body
 	position: relative;
 }
 
+.table td {
+	text-align: center;
+}
+
+.divcenter {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.divblock {
+	margin-top: 0.6em;
+	margin-bottom: 0.6em;
+}
+
+.hideorshow {
+	display:none;
+}
+
+.english_word {
+	font-size: 2em;
+	color: red;
+}
+
+#picture>img {
+    width: 150px;
+}
+
+.playaudio { 
+    height: 50px;
+    width: 100%;
+    position: fixed; 
+    bottom: 0;
+    opacity:1;
+}
