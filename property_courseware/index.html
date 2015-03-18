@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="qiwsir" content="www.itdiffer.com" />
+		<meta name="viewport" content="width=device-width, target-densitydpi=device-dpi, initial-scale=0.5, maximum-scale=no, user-scalable=no" />
+
+		<title>Property</title>
+
+		<link type="text/css" rel="stylesheet" href="css/app.css" />
+
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>		
+		
+		<script src="js/MobileAPI.js" type="text/javascript"></script>
+		<script src="js/scriptjs.js" type="text/javascript"></script>
+		
+		<style>
+		.swipe {
+			overflow: hidden;
+			visibility: hidden;
+			position: relative;
+			}
+		.swipe-wrap {
+			overflow: hidden;
+			position: relative;
+			}
+		.swipe-wrap > div {
+			float:left;
+			width:100%;
+			position: relative;
+			}
+		</style>
+
+	</head>
+	<body onload="loadPage()" style="background:url(images/02.jpg) no-repeat #01476B; background-size: 100%; ">
+		
+		<div id="page">
+			<div class="content">
+			<div id='mySwipe'  class='swipe'>
+				<div class='swipe-wrap'>
+					<!--start page-->
+					<!--div-->
+						<!--content-->
+						<!--img src="./images/01.jpg"-->
+						<!--end content-->
+					<!--/div-->
+					<!-- end page -->
+					
+					<!--start page-->
+					<div><!-- this is index-->
+						<!--content-->
+						<img id="btn1" src="./images/btn1.png" style="width:80%; height:10%; margin-top: 30%;">
+						<img id="btn2" src="./images/btn2.png" style="width:80%; height:10%; margin-top: 5%;">
+						<img id="btn3" src="./images/btn3.png" style="width:80%; height:10%; margin-top: 5%;">
+						<img id="btn4" src="./images/btn4.png" style="width:80%; height:10%; margin-top: 5%;">
+						<img id="btn5" src="./images/btn5.png" style="width:80%; height:10%; margin-top: 5%;">
+						
+						<!--end content-->
+					</div>
+					<!-- end page -->
+					
+					<!--start page-->
+					<div>
+						<!--content-->
+						<img src="./images/03.jpg">
+						<!--end content-->
+					</div>
+					<!-- end page -->
+					<!--start page-->
+					<div>
+						<!--content-->
+						<img src="./images/04.jpg">
+						<!--end content-->
+					</div>
+					<!-- end page -->
+					<!--start page-->
+					<div>
+						<!--content-->
+						<img src="./images/05.jpg">
+						<!--end content-->
+					</div>
+					<!-- end page -->
+					<!--start page-->
+					<div>
+						<!--content-->
+						<img src="./images/06.jpg">
+						<!--end content-->
+					</div>
+					<!-- end page -->
+					<!--start page-->
+					<div>
+						<!--content-->
+						<img src="./images/07.jpg">
+						<!--end content-->
+					</div>
+					<!-- end page -->
+				</div>
+			</div>
+			</div>
+		</div>
+	</body>
+<script src="js/swipe.js" type="text/javascript"></script>
+<script>
+
+// pure JS
+var elem = document.getElementById('mySwipe');
+window.mySwipe = Swipe(elem, {
+  // startSlide: 4,
+  // auto: 3000,
+  // continuous: true,
+  // disableScroll: true,
+  // stopPropagation: true,
+  // callback: function(index, element) {},
+   transitionEnd: function(index, element) { alert(index)}
+});
+
+// with jQuery
+// window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
+
+</script>
+
+</html>
