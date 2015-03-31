@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="qiwsir" content="www.itdiffer.com" />
+		<meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+
+		<title>Web App</title>
+
+		<link type="text/css" rel="stylesheet" href="css/app.css" />
+		<link type="text/css" rel="stylesheet" href="css/jquery.mmenu.all.css" />
+		<link href="css/m-styles.min.css" rel="stylesheet" type="text/css"> 
+
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script src="js/m-dropdown.min.js"></script>
+		<script src="js/m-radio.min.js"></script>
+		<script type="text/javascript" src="js/jquery.mmenu.min.all.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('nav#menu').mmenu();
+			});
+		</script>
+        <style>
+		.swipe {
+			overflow: hidden;
+			visibility: hidden;
+			position: relative;
+			}
+		.swipe-wrap {
+			overflow: hidden;
+			position: relative;
+			}
+		.swipe-wrap > div {
+			float:left;
+			width:100%;
+			position: relative;
+			}
+		</style>
+
+	</head>
+	<body style="background:url(images/02.jpg) no-repeat #01476B; background-size: 100%; " onload="learned()">
+		<div id="page">
+			<div class="header">
+				<a href="#menu"></a>
+				资产证券化
+			</div>
+			
+			<div class="full_content">
+                    <div id='mySwipe'  class='swipe'>
+				<div class='swipe-wrap'>
+                        <!--start page-->
+					<div><!-- this is index-->
+						<!--content-->
+						
+						<a href="#" onclick="swipeToPage(1)"><img id="btn1" src="./images/btn1.png" class="appbtn appbtntop"></a>
+						<a href="#" onclick="swipeToPage(2)"><img id="btn2" src="./images/btn2.png" class="appbtn"></a>
+						<a href='#' onclick='swipeToPage(3)'><img id="btn3" src="./images/btn3.png" class='appbtn'></a>
+						<a href='#' onclick='swipeToPage(4)'><img id="btn4" src="./images/btn4.png" class="appbtn"></a>
+						<a href='#' onclick='swipeToPage(5)'><img id="btn5" src="./images/btn5.png" class="appbtn"></a>
+						
+						<!--end content-->
+					</div>
+					<!-- end page -->
+					
+					<!--start page-->
+					<div>
+						<!--content-->
+						<img src="./images/03.jpg">
+						<!--end content-->
+					</div>
+					<!-- end page -->
+                            <!--start page-->
+					<div>
+						<!--content-->
+						<img src="./images/04.jpg">
+						<!--end content-->
+					</div>
+					<!-- end page -->
+					<!--start page-->
+					<div>
+						<!--content-->
+						<img src="./images/05.jpg">
+						<!--end content-->
+					</div>
+					<!-- end page -->
+					<!--start page-->
+					<div>
+						<!--content-->
+						<img src="./images/06.jpg">
+						<!--end content-->
+					</div>
+					<!-- end page -->
+					<!--start page-->
+					<div style="height:100%; width:100%; overflow:hidden;">
+						<!--content-->
+                                
+                                <!--div style="position:fixed; _position:absolute; top:0; bottom:77px; width: 100%; text-align:center;"-->
+                                <div>
+                                    <img src="./images/07.jpg"/>
+                                </div>
+                                <div style="position:fixed; _position:absolute; bottom:0.3em; height: 77px; width: 100%; text-align:center;">
+                                    <a href="leftright_test.html"><img src="./images/test.png"/></a>
+                                </div>
+						<!--end content-->
+					</div>
+					<!-- end page -->
+                    </div>
+                    </div>
+			</div>
+                <!--div>
+                    <a href="test.html"><img src="./images/test.png"></a>
+                </div-->
+			
+			<nav id="menu">
+				<ul>
+					<li><a href="default.html">首页</a></li>
+					<li><a href="leftright.html">政策与实务(左右翻)<img id="leftright" src="images/lock1.png" style="width:15px; margin-left:5px;"/></a></li>
+					<li><a href="longpic.html">企业网银(长图)<img id="longpic" src="images/lock1.png" style="width:15px; margin-left:5px;"/></a></li>
+					<li><a href="video.html">网上银行(视频)<img id="video" src="images/lock1.png" style="width:15px; margin-left:5px;"/></a></li>
+                            <li><a href="updown.html">申请步骤(上下翻)<img id="updown" src="images/lock1.png" style="width:15px; margin-left:5px;"/></a></li>
+				</ul>
+			</nav>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/thisappjs.js"></script>
+    <script src="js/swipe.js" type="text/javascript"></script>
+    <script src="js/cookie.min.js"></script>
+    <script>
+
+// pure JS
+var elem = document.getElementById('mySwipe');
+window.mySwipe = Swipe(elem, {
+  // startSlide: 4,
+  // auto: 3000,
+   continuous: false,
+   disableScroll: true,
+  // stopPropagation: true,
+  // callback: function(index, element) {},
+    transitionEnd: function(index, element) {
+        if (index>0){
+		var btnid = "#btn" + (index).toString();
+            var okbtn = "images/okbtn" + (index).toString() +".png";
+            $(btnid).attr("src", okbtn);
+		//$(btnid).css("opacity","0.5");
+		}
+   }
+});
+
+// with jQuery
+// window.mySwipe = $('#mySwipe').Swipe().data('Swipe');
+
+function swipeToPage(n){
+	var n = n ;
+	mySwipe.slide(n,200);
+	
+	var btnid = "#btn" + (n).toString();
+	$(btnid).css("opacity","0.5");
+}
+
+function learned(){
+    //$("#leftright").attr("src", "images/lock2.png");
+    //cookie.set("leftright", "learned");
+    startLearn();
+}
+</script>
+</html>

@@ -1,0 +1,164 @@
+@CHARSET "UTF-8";
+*{margin:0px;padding:0px;}
+html{
+	width:100%;
+}
+body {
+	width:100%;
+	margin:0;
+	background:#FFFFFF;
+	font-size:12px;
+}
+.container{
+	width:100%;
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+.main_div{
+	width:100%;
+	margin-top: 0.8em;
+	margin-bottom: 0.5em;
+	margin-left: 0.8em;
+	margin-right: 0.8em;
+}
+
+.question{
+	width:100%;
+	margin-bottom: 1em;
+}
+.question dl {
+	text-align:left;
+	width:90%;
+	margin:0 auto;
+}
+.question dl dt{
+	magin-bottom:4%;
+	font-size:14px;
+	font-weight:bold;
+}
+.question dl dd{
+	padding:1%;
+	font-size:12px;
+	margin-left:1%;
+}
+.question dl dd input{
+	margin-right: 1%;
+}
+.question select{
+	margin-top:2px;
+	border:1px solid #ccc;
+	padding:2px;
+}
+
+.number{
+	font-size: 14px;
+	margin-right:1%;
+}
+.notdisplay{
+	display: none;
+}
+.rightanswer{
+	display: none;
+	text-align: left;
+	margin-left: 7%;
+	color: blue;
+}
+.questionresult {
+	font-weight: bold;
+}
+.passinfo{
+	width:100%;
+	background-position: center;
+	background-repeat: repeat-y;
+	background-size:100% 100%;
+	display: none;
+}
+
+.error, .notpass{
+	display:none;
+	color: red;
+}
+
+.congratulation, .pinfo{
+	margin: 0 auto;
+	font-weight: bold;
+	color: blue;
+	font-size: 14px;
+}
+
+.keys{
+	width:90%;
+	margin:0 auto;
+	text-align:left;
+	font-size:1.2em;
+}
+.ansermain ul{
+	list-style:none;	
+}
+.ansermain ul li{
+	padding:1.5%;
+}
+.restart-p{
+	font-size:1.2em;
+	font-weight:blod;
+	color:red;
+}
+.goto p{
+	font-size:1.2em;
+	font-weight:blod;
+}
+.keys-btn{
+	padding-top:1%;
+	padding-right:6%;
+	text-align:center;
+}
+.div_btn{
+	padding-top:1%;
+	padding-right:6%;
+	text-align:right;
+}
+.btn{
+	padding:1% 2%;
+	border:1px solid #ccc;
+	font-size:1.2em;
+}
+.form1 table{
+	width:100%;
+	text-align:left;
+}
+.form1 table caption{
+	text-align:left;
+}
+.form1 table tr td{
+	padding:0.3em;
+}
+.footer{
+	width:100%;
+	background: url(../resource/images/bg_bottom3.jpg);
+	height:auto !important; 
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	display:block;
+}
+.footer{
+	/*padding-top:3%;*/
+}
+.footer_b p{
+	font-size:1.2em;
+	font-weight:bold;
+	padding:1%;
+}
+
+.title{
+	font-weight: bold;
+	font-size: 4em;
+	text-align: left;
+	margin-left: 1.5em;
+	margin-bottom: 0.5em;
+	margin-top: 1em;
+}
